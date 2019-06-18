@@ -1,0 +1,28 @@
+--baixando express
+npm i --save express
+
+--baixando a dependencia nodemon apenas para desenvolvimento
+npm i --save-dev nodemon 
+essa dependencia é referenciada em package.json/script - para ele ser estartado pelo npm start
+
+--Baixando a dependencia pm2 (global) (mesmo proprosito que o nodemon, porem para ambiente de produção)
+npm i -g pm2
+pm2 monit - exibe detalhes da aplicação, como o quando de Ram esta usando, etc...
+pm2 status - exibe os status da aplicação
+pm2 show 0 - detalhes (0 = ID da aplicação)
+pm2 restart 0 - reestarta a aplicação (0 = ID da aplicação ou o nome da aplicação)
+pm2 stop 0 - 
+pm2 kill 0 -
+
+
+"scripts": {
+    "start": "nodemon", -- comando para executar o servidor com nodemon
+    "production" : "pm2 start index.js --name appx-backend" -- comando para executar o servidor com pm2
+  } --depois de --name é colocado o nome desejado da aplicação
+
+  -----------------------------------------------------------------------------------------
+  Para esse modulo sera utilizado o programa Postman para trabalhar com as requisições
+  do lado de um botão para selecionar o tipo da requisição (vem padrão get) colocar a URL do servidor (nesse caso - http://localhost:3002/opa)
+
+  --Baixando dependencia BodyParse (Responsavel por ler parametros do body (utilizado com post))
+  npm i --save body-parse
